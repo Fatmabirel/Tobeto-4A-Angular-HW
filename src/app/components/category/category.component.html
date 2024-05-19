@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <li
+    (click)="setCurrentCategory(category)"
+    *ngFor="let category of categories"
+    [class]="getCurrentCategoryClass(category)"
+    class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+  >
+    <span class="flex-grow-1 text-truncate">
+      {{ category.categoryName }}
+    </span>
+
+    <button class="btn btn-warning" [routerLink]="'/category/update/' + category.categoryId">Güncelle</button>
+  </li>
+</ul>
